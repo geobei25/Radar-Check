@@ -44,16 +44,16 @@
         var background = new Image();
         background.src = "background.jpg";
         var radar = document.getElementById("radar");
-        var carImage1, carImage2, carImage3; 
+        var carImage1, carImage2, carImage3 carImage4, carImage5; 
   
         var radarX = canvas.width-120;
-        var radarText = " ";
+        var radarText = "";
 
         var car1 = {
             img: carImage1,
             x: 100,
             y: 200,
-            speed: Math.floor(Math.random()*25+10),
+            speed: Math.floor(Math.random()*25+10)
         };
 
        var car2 = {
@@ -89,7 +89,7 @@
         makeCar();
         setInterval(moveCars, 100);
         function makeCar(){
-                for(var i = 0; i,cars.length; i++){
+                for(var i = 0; i < cars.length; i++){
 		cars[i].img = new Image();
 		cars[i].img.src="car"+(i+1)+".png";
 		}
@@ -111,23 +111,24 @@
   //            car1.img=carImage1;
   //           car2.img=carImage2;
           
+        updateScreen();
+
+
         }
         function moveCars() {
+        for(var i = 0; i<cars.length; i++){
 		cars[i].x +=cars[i].speed;
 
 
 		
-            updateScreen();
-           
-              startOver(cars[i]);
-            startOver(cars[i]);
-                
-            updateRadar(cars[i]);
-            updateRadar(cars[i]);
-      
+           updateScreen();
+           startOver(cars[i]);
+           updateRadar(cars[i]);
           
         
         }
+    }
+
         function updateScreen(){
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 		for (var i=0; i<cars.length; i++){
@@ -152,7 +153,7 @@
         function updateRadar(car) {
           
 
-            if ( car.x + car.img.width/2 > radarX &&  ){
+            if ( car.x + car.img.width/2 > radarX ){
                if ( car.speed > 25) {
                 radarText = ""+car.speed;
                 radar.style.color = "red";
