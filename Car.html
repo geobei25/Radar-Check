@@ -44,7 +44,7 @@
         var background = new Image();
         background.src = "background.jpg";
         var radar = document.getElementById("radar");
-        var carImage1, carImage2, carImage3 carImage4, carImage5; 
+        var carImage1, carImage2, carImage3, carImage4, carImage5; 
   
         var radarX = canvas.width-120;
         var radarText = "";
@@ -95,21 +95,7 @@
 		}
 
 			
-		// carImage1 = new Image(); //list[i].img = new Image();
-		//                 	   list[i].img.src = "car" + (i+1)+".png";
-  //                carImage2 = new Image();
-  //       	 carImage3 = new Image();
-		//  carImage4 = new Image();
-		//  carImage5 = new Image();
 
-  //               carImage1.src = "car1.png";
-  //              carImage2.src = "car2.png";
-		// carImage3.src = "car3.png"
-		// carImage4.src = "car4.png"
-		// carImage5.src = "car5.png"
-             
-  //            car1.img=carImage1;
-  //           car2.img=carImage2;
           
         updateScreen();
 
@@ -140,8 +126,7 @@
              
         }
 
-        // Start the animation
-        animate();
+      
         function startOver(car){
               if (car.x > canvas.width) {
                 car.x = -car.img.width;
